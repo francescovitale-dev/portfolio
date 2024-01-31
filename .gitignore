@@ -1,0 +1,23 @@
+# Vite.js
+node_modules/
+dist/
+.eslintcache
+.env
+
+# Editor
+.vscode/
+.idea/
+
+# Build
+build/
+.cache/
+
+# Logs and testing
+*.log
+__tests__/
+
+# Dependency directory
+dependencies/
+
+# Custom Files
+data.js
