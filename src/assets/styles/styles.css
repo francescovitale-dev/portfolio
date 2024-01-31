@@ -3,8 +3,8 @@
 :root {
   --color-body: #848f91;
   --color-heading: #eef3db;
-  --color-base: black;    /* #033f47; */
-  --color-base2: #111111;   /* #022a30; */
+  --color-base: black;    
+  --color-base2: #111111;   
   --color-brand: #e0f780;
   --color-brand2: #deff58;
   --sidbar-width: 240px;
@@ -18,8 +18,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-heading) !important;
+  color: var(--color-heading);
   font-weight: 700;
+}
+
+.logo {
+  color: white;
 }
 
 a {
