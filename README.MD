@@ -39,7 +39,3 @@ Feel free to reach out to me, through the contact form on my portfolio or connec
 - [LinkedIn](https://www.linkedin.com/in/francesco-vitale--/)
 - [Instagram](https://www.instagram.com/vitale_francesco_/)
 - [GitHub](https://github.com/francescovitale-dev)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
