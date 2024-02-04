@@ -43,7 +43,7 @@ window.onload = function() {
               });
 
             setTimeout(function() {
-                location.reload(); // Reload the page after submitting the form
+              window.location.href = window.location.href;
             }, 2000);
           }, function(error) {
                 Swal.fire({
