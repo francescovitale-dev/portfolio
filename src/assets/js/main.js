@@ -9,10 +9,7 @@ import emailJsKey from './data.js';
 import '../styles/styles.css'
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Ritarda l'inizializzazione di AOS di 100 millisecondi (puoi regolare il valore)
-  setTimeout(function() {
     AOS.init();
-  }, 100);
 });
 
 (function() {
