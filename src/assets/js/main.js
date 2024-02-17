@@ -10,13 +10,9 @@ import '../styles/styles.css'
 
 document.addEventListener('DOMContentLoaded', function () {
   // Delay AOS initialization by 100 milliseconds
-  AOS.init({
-    startEvent: 'load'
-});
-
-$(window).on('load', function() {
-    AOS.refresh();
-});
+  setTimeout(function() {
+    AOS.init();
+  }, 100);
 });
 
 (function() {
