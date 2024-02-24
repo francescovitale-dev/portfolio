@@ -9,11 +9,14 @@ import emailJsKey from './data.js';
 import '../styles/styles.css'
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Delay AOS initialization by 100 milliseconds
+  // Initialize AOS after a short delay
   setTimeout(function() {
     AOS.init();
+    // Force a small scroll after AOS initialization
+    window.scrollBy(0, 1);
   }, 100);
 });
+
 
 (function() {
   emailjs.init(emailJsKey);
