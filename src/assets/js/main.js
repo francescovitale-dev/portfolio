@@ -13,9 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(function() {
     AOS.init();
   }, 100);
-  
-  // Inizializza AOS al caricamento della pagina
-  AOS.init();
 });
 
 
