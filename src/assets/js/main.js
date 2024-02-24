@@ -8,14 +8,18 @@ import Swal from 'sweetalert2';
 import emailJsKey from './data.js';
 import '../styles/styles.css'
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Initialize AOS after a short delay
+window.onload = function() {
+  // Initialize AOS after a slight delay to ensure all elements are loaded
   setTimeout(function() {
-    AOS.init();
-    // Force a small scroll after AOS initialization
-    window.scrollBy(0, 1);
-  }, 100);
-});
+    AOS.init({
+      once: true // Ensure animations only occur once
+    });
+  }, 500); // Adjust delay as needed
+  
+  // Trigger scroll event to initiate AOS animations
+  window.dispatchEvent(new Event('scroll'));
+};
+
 
 
 (function() {
