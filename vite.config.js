@@ -7,7 +7,5 @@ export default {
   },
   server: {
     port: 8080,
-     // Abilita le impostazioni CORS per il server di sviluppo Vite
-     cors: true
   }
 }
