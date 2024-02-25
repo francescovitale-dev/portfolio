@@ -5,7 +5,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
-import emailJsKey from './data.js';
 import '../styles/styles.css'
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 100);
 });
 
-
+const emailJsKey = import.meta.env.EMAIL_JS_KEY;
 
 
 (function() {
