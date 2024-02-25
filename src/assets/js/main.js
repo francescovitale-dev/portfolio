@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 100);
 });
 
-const emailJsKey = import.meta.env.EMAIL_JS_KEY;
+const emailJsKey = process.env.EMAIL_JS_KEY;
 
 
 (function() {
