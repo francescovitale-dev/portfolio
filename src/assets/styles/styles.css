@@ -197,10 +197,3 @@ img {
   justify-content: center;
   font-size: 19px;
 }
-
-/* CENTRARE GLI ELEMENTI SU DISPOSITIVI MOBILI */
-@media (max-width: 767px) {
-  .d-flex.flex-column.align-items-center.align-items-lg-center.justify-content-center.justify-content-lg-between {
-    text-align: center;
-  }
-}
