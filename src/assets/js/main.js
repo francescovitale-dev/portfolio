@@ -5,6 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
+import emailJsKey from './data';
 import '../styles/styles.css'
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -13,9 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
     AOS.init();
   }, 100);
 });
-
-const emailJsKey = process.env.EMAIL_JS_KEY;
-
 
 (function() {
   emailjs.init(emailJsKey);
@@ -47,14 +45,15 @@ window.onload = function() {
             setTimeout(function() {
               window.location.href = window.location.href;
             }, 2000);
-          }, function(error) {
-                Swal.fire({
-                title: 'Error!',
-                text: 'Something went wrong. Please try again later.',
-                icon: 'error',
-                timer: 3000, // Set a timer to close the alert after 3 seconds
-                showConfirmButton: false
-              });
+          })
+          .catch(function() {
+            Swal.fire({
+              title: 'Error!',
+              text: 'Something went wrong. Please try again later.',
+              icon: 'error',
+              timer: 3000,
+              showConfirmButton: false
+            });
           });
-  });
-}
+      });
+    };
