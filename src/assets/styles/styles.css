@@ -1,14 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
 
 :root {
-  --color-body: #848f91;
-  --color-heading: #ffffffce;
-  --color-base: rgb(37, 37, 37);    
-  --color-base2: #141414;   
-  --color-brand: #efdca0ce;
-  --color-brand2: #fffdf6ce;
+  --color-body: #B0BEC5; /* Testo principale */
+  --color-heading: #FFFFFF; /* Testo secondario */
+  --color-base: #212121; /* Sfondo principale */
+  --color-base2: #282828; /* Sfondo sezioni */
+  --color-brand: #03A9F4; /* Colore di marca */
+  --color-brand2: #86ceef; /* Altro colore di marca */
   --sidbar-width: 240px;
   --font-base: "Bai Jamjuree";
+}
+
+.light-theme {
+  --color-body: #757575; 
+  --color-heading: #000000; 
+  --color-base: #F5F5F5; 
+  --color-base2: #FFFFFF; 
+  --color-brand: #03A9F4; 
+  --color-brand2: #86ceef;
+  --sidbar-width: 240px;
+  --font-base: "Bai Jamjuree";
+}
+
+.light-mode {
+  color: var(--color-brand); /* Regola questo valore per spostare l'icona */
 }
 
 body {
@@ -91,7 +106,7 @@ img {
 /* NAVBAR */
 
 .navbar {
-  background-color: var(--color-base);
+  background-color: var(--color-brand);
 }
 
 .navbar .nav-link {
@@ -101,11 +116,11 @@ img {
 }
 
 .navbar .nav-link:hover {
-  color: var(--color-brand);
+  color: var(--color-brand2);
 }
 
 .navbar .nav-link.active {
-  color: var(--color-brand);
+  color: var(--color-brand2);
 }
 
 @media (min-width: 992px) {
@@ -130,6 +145,24 @@ img {
   }
 }
 
+.content-icons {
+  height: 40px;
+  width: 40px;
+  background-color: var(--color-base);
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+
+  margin-bottom: 15px;
+}
+
+.content-icons:hover {
+  color: var(--color-brand);
+  transition: all 0.3s ease;
+}
+
 .img-home {
   width: 200px;
   height: 200px;
@@ -151,6 +184,7 @@ img {
   border-color: var(--color-brand);
   color: var(--color-base);
   margin-bottom: 5px;
+  border-radius: 50px;
 }
 
 .btn-brand:hover, .btn-brand:focus {

@@ -19,6 +19,53 @@ document.addEventListener('DOMContentLoaded', function () {
   emailjs.init(emailJsKey);
 })();
 
+// Gestione del tema dark mode / light mode
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButtonLarge = document.getElementById('toggle-theme');
+  const toggleButtonMobile = document.getElementById('toggle-theme-mobile');
+  const body = document.body;
+
+  // Funzione per gestire il toggle del tema
+  const toggleTheme = () => {
+      if (body.classList.contains('light-theme')) {
+          body.classList.remove('light-theme');
+          toggleButtonLarge.querySelector('i').classList.remove('bi-sun');
+          toggleButtonLarge.querySelector('i').classList.add('bi-moon');
+          toggleButtonMobile.querySelector('i').classList.remove('bi-sun');
+          toggleButtonMobile.querySelector('i').classList.add('bi-moon');
+          localStorage.setItem('theme', 'dark');
+      } else {
+          body.classList.add('light-theme');
+          toggleButtonLarge.querySelector('i').classList.remove('bi-moon');
+          toggleButtonLarge.querySelector('i').classList.add('bi-sun');
+          toggleButtonMobile.querySelector('i').classList.remove('bi-moon');
+          toggleButtonMobile.querySelector('i').classList.add('bi-sun');
+          localStorage.setItem('theme', 'light');
+      }
+  };
+
+  // Aggiungi gli event listener per entrambi i pulsanti
+  toggleButtonLarge.addEventListener('click', toggleTheme);
+  toggleButtonMobile.addEventListener('click', toggleTheme);
+
+  // Controlla il tema salvato in localStorage al caricamento della pagina
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+      body.classList.remove('light-theme');
+      toggleButtonLarge.querySelector('i').classList.remove('bi-sun');
+      toggleButtonLarge.querySelector('i').classList.add('bi-moon');
+      toggleButtonMobile.querySelector('i').classList.remove('bi-sun');
+      toggleButtonMobile.querySelector('i').classList.add('bi-moon');
+  } else {
+      body.classList.add('light-theme');
+      toggleButtonLarge.querySelector('i').classList.remove('bi-moon');
+      toggleButtonLarge.querySelector('i').classList.add('bi-sun');
+      toggleButtonMobile.querySelector('i').classList.remove('bi-moon');
+      toggleButtonMobile.querySelector('i').classList.add('bi-sun');
+  }
+});
+
+
 window.onload = function() {
   document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();

@@ -1,429 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJK7WQ499K"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-BJK7WQ499K');
-    </script>
-    
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Vitale Francesco - Exploring the Digital World: A Web Developer's Journey. Discover my portfolio and resume. Get in touch with me through my contact page.">
-    
-    <title>Vitale Francesco</title>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJK7WQ499K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <script defer type="module" src="./assets/js/main.js"></script>
+    gtag('config', 'G-BJK7WQ499K');
+  </script>
 
-    <link rel="icon" href="favicon.ico">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Vitale Francesco - Exploring the Digital World: A Web Developer's Journey. Discover my portfolio and resume. Get in touch with me through my contact page.">
 
-    <!-- Tag Open Graph -->
-    <meta property="og:title" content="Vitale Francesco" />
-    <meta property="og:description" content="Exploring the Digital World: A Web Developer's Journey" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/francescovitale-dev/Francesco-Vitale-website/dev/assets/images/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Vitale Francesco Picture">
-    <meta property="og:url" content="https://www.vitalefrancesco.com/index.html" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Vitale Francesco" />
-    <meta name="keywords" content="web development, portfolio, resume, contact, digital world, web developer">
-    <meta name="author" content="Francesco Vitale">
-  </head>
+  <title>Vitale Francesco</title>
 
-  <body data-bs-spy="scroll" data-bs-target=".navbar">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container flex-lg-column">
-        <a class="navbar-brand mb-lg-3 mx-lg-auto" href="#">
-          <span class="h3 fw-bold d-block d-lg-none logo">Vitale Francesco</span>
-          <img
-            src="assets/images/me-picture.webp"
-            class="d-none d-lg-block rounded-circle"
-            alt="Profile picture"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#project">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
+  <script defer type="module" src="./assets/js/main.js"></script>
+
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Tag Open Graph -->
+  <meta property="og:title" content="Vitale Francesco" />
+  <meta property="og:description" content="Exploring the Digital World: A Web Developer's Journey" />
+  <meta property="og:image"
+    content="https://raw.githubusercontent.com/francescovitale-dev/Francesco-Vitale-website/dev/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Vitale Francesco Picture">
+  <meta property="og:url" content="https://www.vitalefrancesco.com/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vitale Francesco" />
+  <meta name="keywords" content="web development, portfolio, resume, contact, digital world, web developer">
+  <meta name="author" content="Francesco Vitale">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+  <!-- Navbar -->
+  <button id="toggle-theme"
+    class="btn btn-link text-decoration-none text-white position-absolute top-0 end-0 d-none d-lg-block">
+    <i id="theme-icon" class="bi bi-moon light-mode"></i>
+  </button>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container flex-lg-column">
+      <a class="navbar-brand mb-lg-3 mx-lg-auto" href="#">
+        <span class="h3 fw-bold d-block d-lg-none logo">Vitale Francesco</span>
+        <img src="assets/images/me-picture.webp" class="d-none d-lg-block rounded-circle" alt="Profile picture" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#project">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Content -->
+  <div id="content-wrapper">
+    <!-- Home -->
+    <section id="home" class="full-height px-lg-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-8 d-flex align-items-center justify-content-center mb-4 position-relative">
+            <button id="toggle-theme-mobile"
+              class="btn btn-link text-decoration-none text-white position-absolute top-0 end-0 mb-4 d-lg-none">
+              <i id="theme-icon-mobile" class="bi bi-moon light-mode"></i>
+            </button>
+            <img src="assets/images/me-picture.webp" class="d-lg-none img-home rounded-circle" alt="Profile picture"
+              data-aos="fade-up" data-aos-duration="500" />
+          </div>
+          <div class="col-lg-8 mt-2 mb-4">
+            <h1 class="display-4 fw-bold" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
+              I'M A <span class="text-brand">FULL STACK DEVELOPER</span> FROM
+              ITALY
+            </h1>
+            <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
+              I'm Francesco a Full Stack Developer from Italy. <br />
+              As a devoted traveler, I've discovered that the web is an
+              infinite world to explore, just as much as the places I've
+              visited.
+              <br>
+              Keep scrolling to delve into the projects I've created while journeying between the real and digital
+              worlds.
+            </p>
+            <a href="https://www.linkedin.com/in/francesco-vitale--/" target="_blank"><i
+                class="bi bi-linkedin content-icons"></i></a>
+            <a href="https://github.com/francescovitale-dev" target="_blank"><i
+                class="bi bi-github content-icons"></i><a>
+                <br>
+                <a href="https://github.com/francescovitale-dev/portoflio-website/raw/main/src/assets/images/francesco-vitale-cv.pdf"
+                  download class="btn btn-brand me-3">Download Resume</a>
+          </div>
         </div>
       </div>
-    </nav>
+    </section>
 
-    <!-- Content -->
-    <div id="content-wrapper">
-      <!-- Home -->
-      <section id="home" class="full-height px-lg-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 d-flex align-items-center justify-content-center mb-4">
-              <img
-              src="assets/images/me-picture.webp"
-              class="d-lg-none img-home rounded-circle"
-              alt="Profile picture"
-              data-aos="fade-up"
-              data-aos-duration="500"
-              />
-            </div>
-            <div class="col-lg-8 mt-2 mb-4">
-              <h1
-                class="display-4 fw-bold"
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay="300"
-              >
-                I'M A <span class="text-brand">FULL STACK DEVELOPER</span> FROM
-                ITALY
-              </h1>
-              <p
-              data-aos="fade-up"
-              data-aos-duration="700"
-              data-aos-delay="500"
-              >
-                I'm Francesco a Full Stack Developer from Italy. <br />
-                As a devoted traveler, I've discovered that the web is an
-                infinite world to explore, just as much as the places I've
-                visited.
-                <br>
-                Keep scrolling to delve into the projects I've created while journeying between the real and digital worlds.
-              </p>
-              <a href="https://github.com/francescovitale-dev/portoflio-website/raw/main/src/assets/images/francesco-vitale-cv.pdf" download class="btn btn-brand me-3">Download Resume</a>
-              <a href="https://www.linkedin.com/in/francesco-vitale-206765226/"
-                target="_blank"
-                class="btn btn-brand"
-                >LinkedIn</a>
-            </div>
+    <!-- Project -->
+    <section id="project" class="full-height px-lg-5">
+      <div class="container">
+        <div class="row pb-4" data-aos="fade-up">
+          <div class="col-lg-8">
+            <h6 class="text-brand">PROJECTS</h6>
+            <h1 class="fw-bold">My Recent Projects</h1>
           </div>
         </div>
-      </section>
 
-      <!-- Project -->
-      <section id="project" class="full-height px-lg-5">
-        <div class="container">
-          <div class="row pb-4" data-aos="fade-up">
-            <div class="col-lg-8">
-              <h6 class="text-brand">PROJECTS</h6>
-              <h1 class="fw-bold">My Recent Projects</h1>
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700">
+            <div class="card-custom rounded-4 bg-base shadow-effect">
+              <div class="card-custom-image rounded-4">
+                <img class="card-custom-image rounded-4" src="assets/images/HydratioMate.webp" alt="HydratioMate" />
+              </div>
+              <div class="card-custom-content p-4">
+                <h4>HydratioMate</h4>
+                <p>
+                  Keep hydrated with HydratioMate, a Vanilla JavaScript and Bootstrap-powered web app.
+                </p>
+                <a class="link-custom" href="https://github.com/francescovitale-dev/hydratio-mate" target="_blank">View
+                  On GitHub</a>
+              </div>
             </div>
           </div>
 
-          <div class="row gy-4">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700">
-              <div class="card-custom rounded-4 bg-base shadow-effect">
-                <div class="card-custom-image rounded-4">
-                  <img
-                    class="card-custom-image rounded-4"
-                    src="assets/images/HydratioMate.webp"
-                    alt="HydratioMate"
-                  />
-                </div>
-                <div class="card-custom-content p-4">
-                  <h4>HydratioMate</h4>
-                  <p>
-                    Keep hydrated with HydratioMate, a Vanilla JavaScript and Bootstrap-powered web app.
-                  </p>
-                  <a
-                    class="link-custom"
-                    href="https://github.com/francescovitale-dev/hydratio-mate"
-                    target="_blank"
-                    >View On GitHub</a
-                  >
-                </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+            <div class="card-custom rounded-4 bg-base shadow-effect">
+              <div class="card-custom-image rounded-4">
+                <img class="card-custom-image rounded-4" src="assets/images/readnavigator.webp" alt="ReadNavigator" />
+              </div>
+              <div class="card-custom-content p-4">
+                <h4>ReadNavigator</h4>
+                <p>
+                  Discover your next read with ReadNavigator, built with Vanilla JavaScript and Bootstrap.
+                </p>
+                <br />
+                <a class="link-custom" href="https://github.com/francescovitale-dev/readnavigator" target="_blank">View
+                  On GitHub</a>
               </div>
             </div>
+          </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-              <div class="card-custom rounded-4 bg-base shadow-effect">
-                <div class="card-custom-image rounded-4">
-                  <img
-                    class="card-custom-image rounded-4"
-                    src="assets/images/readnavigator.webp"
-                    alt="ReadNavigator"
-                  />
-                </div>
-                <div class="card-custom-content p-4">
-                  <h4>ReadNavigator</h4>
-                  <p>
-                    Discover your next read with ReadNavigator, built with Vanilla JavaScript and Bootstrap. 
-                  </p>
-                  <br />
-                  <a
-                    class="link-custom"
-                    href="https://github.com/francescovitale-dev/readnavigator"
-                    target="_blank"
-                    >View On GitHub</a
-                  >
-                </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+            <div class="card-custom rounded-4 bg-base shadow-effect">
+              <div class="card-custom-image rounded-4">
+                <img class="card-custom-image rounded-4" src="assets/images/veggiedelight.webp" alt="ReadNavigator" />
+              </div>
+              <div class="card-custom-content p-4">
+                <h4>VeggieDelight</h4>
+                <p>
+                  Explore delicious vegetarian recipes with VeggieDelight, crafted using React and Bootstrap.
+                </p>
+                <br />
+                <a class="link-custom" href="https://github.com/francescovitale-dev/VeggieDelight" target="_blank">View
+                  On GitHub</a>
               </div>
             </div>
+          </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-              <div class="card-custom rounded-4 bg-base shadow-effect">
-                <div class="card-custom-image rounded-4">
-                  <img
-                    class="card-custom-image rounded-4"
-                    src="assets/images/veggiedelight.webp"
-                    alt="ReadNavigator"
-                  />
-                </div>
-                <div class="card-custom-content p-4">
-                  <h4>VeggieDelight</h4>
-                  <p>
-                    Explore delicious vegetarian recipes with VeggieDelight, crafted using React and Bootstrap.
-                  </p>
-                  <br />
-                  <a
-                    class="link-custom"
-                    href="https://github.com/francescovitale-dev/VeggieDelight"
-                    target="_blank"
-                    >View On GitHub</a
-                  >
-                </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+            <div class="card-custom rounded-4 bg-base shadow-effect">
+              <div class="card-custom-image rounded-4">
+                <img class="card-custom-image rounded-4" src="assets/images/eurasmus.webp" alt="Eurasmus" />
+              </div>
+              <div class="card-custom-content p-4">
+                <h4>Eurasmus</h4>
+                <p>
+                  Manage your exchange program expenses seamlessly with Eurasmus, powered by React, Node.js, Bootstrap,
+                  and Chart.js.
+                </p>
+                <br />
+                <a class="link-custom" href="https://github.com/francescovitale-dev/eurasmus" target="_blank">View On
+                  GitHub</a>
               </div>
             </div>
+          </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-              <div class="card-custom rounded-4 bg-base shadow-effect">
-                <div class="card-custom-image rounded-4">
-                  <img
-                    class="card-custom-image rounded-4"
-                    src="assets/images/eurasmus.webp"
-                    alt="Eurasmus"
-                  />
-                </div>
-                <div class="card-custom-content p-4">
-                  <h4>Eurasmus</h4>
-                  <p>
-                    Manage your exchange program expenses seamlessly with Eurasmus, powered by React, Node.js, Bootstrap, and Chart.js.
-                  </p>
-                  <br />
-                  <a
-                    class="link-custom"
-                    href="https://github.com/francescovitale-dev/eurasmus"
-                    target="_blank"
-                    >View On GitHub</a
-                  >
-                </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+            <div class="card-custom rounded-4 bg-base shadow-effect">
+              <div class="card-custom-image rounded-4">
+                <img class="card-custom-image rounded-4" src="assets/images/nana.webp" alt="Eurasmus" />
+              </div>
+              <div class="card-custom-content p-4">
+                <h4>Naná</h4>
+                <p>
+                  Savor authentic Italian cuisine at Naná, a React and Vanilla CSS creation embodying a true Italian
+                  restaurant experience in Frankfurt.
+                </p>
+                <br />
+                <a class="link-custom" href="https://xn--nanconvivial-ebb.de/" target="_blank">View Online</a>
               </div>
             </div>
+          </div>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
-              <div class="card-custom rounded-4 bg-base shadow-effect">
-                <div class="card-custom-image rounded-4">
-                  <img
-                    class="card-custom-image rounded-4"
-                    src="assets/images/nana.webp"
-                    alt="Eurasmus"
-                  />
-                </div>
-                <div class="card-custom-content p-4">
-                  <h4>Naná</h4>
-                  <p>
-                    Savor authentic Italian cuisine at Naná, a React and Vanilla CSS creation embodying a true Italian restaurant experience in Frankfurt.
-                  </p>
-                  <br />
-                  <a
-                    class="link-custom"
-                    href="https://xn--nanconvivial-ebb.de/"
-                    target="_blank"
-                    >View Online</a
-                  >
-                </div>
-              </div>
-            </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ABOUT -->
+    <section id="about" class="full-height px-lg-5">
+      <div class="container">
+        <div class="row pb-4" data-aos="fade-up">
+          <div class="col-lg-8">
+            <h6 class="text-brand">ABOUT</h6>
+            <h4 class="fw-bold">About Me</h4>
           </div>
         </div>
-      </section>
 
-      <!-- ABOUT -->
-      <section id="about" class="full-height px-lg-5">
-        <div class="container">
-          <div class="row pb-4" data-aos="fade-up">
-            <div class="col-lg-8">
-              <h6 class="text-brand">ABOUT</h6>
-              <h1 class="fw-bold">About Me</h1>
-            </div>
-          </div>
+        <div class="row gy-5">
+          <div class="lg-6">
+            <div class="row gy-4">
+              <div class="col-12" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                <div class="bg-base p-4 rounded-4 shadow-effect">
+                  <h4 class="fw-bold mb-">Who am I?</h4>
+                  <hr class="text-brand my-2 hr-style">
+                  <p>
+                    I'm a 20-year-old who enjoys coding and exploring the world, eager to discover new places and share
+                    authentic moments with people. Reading is another passion of mine, books are a constant source of
+                    inspiration and learning for me. Every day presents an opportunity to learn something new and
+                    approach the world with wide-open eyes.
+                  </p>
+                  <p>
+                    If you share interests in technology, travel, reading, entrepreneurship or simply being curious, I'm
+                    open to new connections!
+                  </p>
+                  <p>
+                    Feel free to say hello and share your experiences!
+                  </p>
 
-          <div class="row gy-5">
-            <div class="lg-6">
-              <div class="row gy-4">
-                <div
-                  class="col-12"
-                  data-aos="fade-up"
-                  data-aos-duration="700"
-                  data-aos-delay="300"
-                >
-                  <div class="bg-base p-4 rounded-4 shadow-effect">
-                    <h4>Personal Statement</h4>
-                    <hr class="text-brand my-2 hr-style">
-                    <p>
-                      I am a passionate junior full-stack web developer with diverse skills and a commitment to creating innovative digital solutions. My current expertise includes proficiency in HTML, CSS, JavaScript, and Bootstrap, enabling me to craft responsive and user-friendly websites. Additionally, I have skills in Node.js and Express.js for server-side development and handling client requests, along with React for dynamic user interface development.
-                    </p>
-
-                    <p>
-                      While I am at a junior level, my experience in web development has been characterized by continuous learning. Currently, my focus is on further enhancing my skills through hands-on experiences and staying updated with the latest industry trends. As a dedicated problem solver and collaborative team member, I bring adaptability and a quick learning ability to tackle new challenges.
-                    </p>
-
-                    <p>
-                      I am eager to embrace new opportunities and contribute to projects that require web development skills and a strong commitment to excellence. If you are interested in collaborating or have any questions, please feel free to contact me through my contact page.
-                    </p>
-                    <p>
-                      I look forward to connecting with you.
-                    </p>
-                  </div>
                 </div>
+              </div>
 
-            <div class="lg-6">
-              <h3
-                class="mb-4"
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-delay="300"
-              >
-                Education
-              </h3>
-              <div class="row gy-4">
-                <div
-                  class="col-12"
-                  data-aos="fade-up"
-                  data-aos-duration="700"
-                  data-aos-delay="300"
-                >
-                  <div class="bg-base p-4 rounded-4 shadow-effect">
-                    <h4><h4>High School Diploma</h4></h4>
-                    <p class="text-brand mb-2">
-                      Technical Institute, Economic Sector (2022)
-                    </p>
+              <div class="lg-6">
+                <h3 class="mb-4" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                  Education
+                </h3>
+                <div class="row gy-4">
+
+                  <div class="col-12" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                    <div class="bg-base p-4 rounded-4 shadow-effect">
+                      <h4>Full Stack Development Master Program</h4>
+                      <p class="text-brand mb-2">
+                        start2impact University (2023 - 2024)
+                      </p>
+                      <p class="mb-0">
+                        Throughout the Full Stack Development Master Program at start2impact University,
+                        I delved into a comprehensive curriculum encompassing HTML, CSS, Git, JavaScript, React,
+                        Bootstrap, Node.js, Express.js and more. <br>
+                        I successfully completed various projects, showcasing my ability to architect dynamic and
+                        responsive web applications.
+                        <a href="https://raw.githubusercontent.com/francescovitale-dev/portoflio-website/dev/src/assets/images/master-attestato.png"
+                          target="_blank" rel="noopener noreferrer"><button
+                            class="btn btn-brand btn-sm w-100 btn-form mt-3">View Certificate</button></a>
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div
-                  class="col-12"
-                  data-aos="fade-up"
-                  data-aos-duration="700"
-                  data-aos-delay="300"
-                >
-                  <div class="bg-base p-4 rounded-4 shadow-effect">
-                    <h4>Full Stack Development Master Program</h4>
-                    <p class="text-brand mb-2">
-                      start2impact University (2023 - 2024)
-                    </p>
-                    <p class="mb-0">
-                      Throughout the Full Stack Development Master Program at start2impact University,
-                      I delved into a comprehensive curriculum encompassing HTML, CSS, Git, JavaScript, React, Bootstrap, Node.js, Express.js, and more. <br>
-                      I successfully completed various projects, showcasing my ability to architect dynamic and responsive web applications.
-                      <a href="https://raw.githubusercontent.com/francescovitale-dev/portoflio-website/dev/src/assets/images/master-attestato.png" target="_blank" rel="noopener noreferrer"><button class="btn btn-brand btn-sm w-100 btn-form mt-3">View Certificate</button></a>
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="col-12"
-                  data-aos="fade-up"
-                  data-aos-duration="700"
-                  data-aos-delay="300"
-                >
-                  <div class="bg-base p-4 rounded-4 shadow-effect">
-                    <h4>CS50x</h4>
-                    <p class="text-brand mb-2">
-                      Harvard Online (Issued May 2024)
-                    </p>
-                    <p class="mb-0">
-                      Explored algorithms, data structures, and programming essentials. Developed familiarity with C, Python, and SQL. Emphasized problem-solving with a focus on implementing good code design principles. <br>
-                      <a href="https://certificates.cs50.io/c52b5631-c7db-4e86-81d3-866b3cd17f83.png?size=letter" target="_blank" rel="noopener noreferrer"><button class="btn btn-brand btn-sm w-100 btn-form mt-3">View Certificate</button></a>
-                    </p>
+                  <div class="col-12" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                    <div class="bg-base p-4 rounded-4 shadow-effect">
+                      <h4>CS50x</h4>
+                      <p class="text-brand mb-2">
+                        Harvard Online (Issued May 2024)
+                      </p>
+                      <p class="mb-0">
+                        Explored algorithms, data structures, and programming essentials. Developed familiarity with C,
+                        Python, and SQL. Emphasized problem-solving with a focus on implementing good code design
+                        principles. <br>
+                        <a href="https://certificates.cs50.io/c52b5631-c7db-4e86-81d3-866b3cd17f83.png?size=letter"
+                          target="_blank" rel="noopener noreferrer"><button
+                            class="btn btn-brand btn-sm w-100 btn-form mt-3">View Certificate</button></a>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+    </section>
 
-      <!-- CONTACT -->
-      <section id="contact" class="full-height px-lg-5">
-        <div class="container" data-aos="fade-up">
+    <!-- CONTACT -->
+    <section id="contact" class="full-height px-lg-5">
+      <div class="container" data-aos="fade-up">
 
-          <div class="row justify-content-center text-center">
-            <div class="col-lg-8 pb-4">
-              <h6 class="text-brand">CONTACT</h6>
-              <h1 class="fw-bold">Get In Touch</h1>
-            </div>
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8 pb-4">
+            <h6 class="text-brand">CONTACT</h6>
+            <h1 class="fw-bold">Get In Touch</h1>
+          </div>
 
-            <div class="col-lg-8">
-              <form id="contact-form" action="#" class="row">
-                <div class="form-group col-md-12" data-aos="fade-up" data-aos-duration="700">
-                  <input type="text" class="form-control" name="from_name" required placeholder="Name">
-                </div>
-                <div class="form-group col-md-12" data-aos="fade-up" data-aos-duration="700"
-                data-aos-delay="300">
-                  <input type="email" class="form-control" name="email_id" required placeholder="Email">
-                </div>
-                <div class="form-group col-md-12" data-aos="fade-up" data-aos-duration="700"
-                data-aos-delay="500">
-                  <input type="text" class="form-control" name="subject" required placeholder="Subject">
-                </div>
-                <div class="form-group col-md-12" data-aos="fade-up" data-aos-duration="700"
-                data-aos-delay="700">
-                  <textarea class="form-control" rows="4" name="message" required placeholder="Message"></textarea>
-                </div>
-                <div class="form-group col-md-12 d-grid" data-aos="fade-up" data-aos-duration="700" data-aos-delay="700">
-                  <button type="submit" class="btn btn-brand btn-form">Contact me</button>
-                </div>
-              </form>
-            </div>
-            </div>
-         
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer class="py-5 px-lg-5">
-        <div class="container">
-          <div class="row gy-4 justify-content-center justify-content-lg-between align-items-center">
-              <div class="col-lg-auto text-center text-lg-start">
-                <p class="mb-0">Copyright © 2024. All rights reserved.</p>
+          <div class="col-lg-8">
+            <form id="contact-form" action="#" class="row">
+              <div class="form-group col-md-12" data-aos="fade-up" data-aos-duration="700">
+                <input type="text" class="form-control" name="from_name" required placeholder="Name">
               </div>
-              <div class="col-lg-auto text-center">
-                <div class="social-icons">
-                  <a href="https://www.instagram.com/vitale_francesco_/" target="_blank"><i class="bi bi-instagram"></i></a>
-                  <a href="https://www.linkedin.com/in/francesco-vitale--/" target="_blank"><i class="bi bi-linkedin"></i></a>
-                  <a href="https://github.com/francescovitale-dev" target="_blank"><i class="bi bi-github"></i></a>
-                </div>
+              <div class="form-group col-md-12" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                <input type="email" class="form-control" name="email_id" required placeholder="Email">
               </div>
+              <div class="form-group col-md-12" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
+                <input type="text" class="form-control" name="subject" required placeholder="Subject">
+              </div>
+              <div class="form-group col-md-12" data-aos="fade-up" data-aos-duration="700" data-aos-delay="700">
+                <textarea class="form-control" rows="4" name="message" required placeholder="Message"></textarea>
+              </div>
+              <div class="form-group col-md-12 d-grid" data-aos="fade-up" data-aos-duration="700" data-aos-delay="700">
+                <button type="submit" class="btn btn-brand btn-form">Contact me</button>
+              </div>
+            </form>
           </div>
         </div>
-      </footer>
 
-    </div>
-  </body>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-5 px-lg-5">
+      <div class="container">
+        <div class="row gy-4 justify-content-center justify-content-lg-between align-items-center">
+          <div class="col-lg-auto text-center text-lg-start">
+            <p class="mb-0">Copyright © 2024. All rights reserved.</p>
+          </div>
+          <div class="col-lg-auto text-center">
+            <div class="social-icons">
+              <a href="https://www.instagram.com/vitale_francesco_/" target="_blank"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/francesco-vitale--/" target="_blank"><i
+                  class="bi bi-linkedin"></i></a>
+              <a href="https://github.com/francescovitale-dev" target="_blank"><i class="bi bi-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+
 </html>
