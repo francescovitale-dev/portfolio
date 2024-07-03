@@ -236,3 +236,12 @@ img {
 .eurasmus-img {
   width: 40rem;
 }
+
+/* HOME CONTENT */
+
+@media (min-width: 992px) {
+  .custom-container {
+    width: 75%;
+    margin: 0 auto; 
+  }
+}
