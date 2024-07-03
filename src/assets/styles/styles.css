@@ -146,9 +146,14 @@ img {
   }
 }
 
+.introduction {
+  color: var(--color-heading);
+}
+
 .content-icons {
   height: 40px;
   width: 40px;
+  color: var(--color-heading);
   background-color: var(--color-base);
   border-radius: 100px;
   display: inline-flex;
@@ -160,7 +165,7 @@ img {
 }
 
 .content-icons:hover {
-  color: var(--color-brand);
+  color: var(--color-body);
   transition: all 0.3s ease;
 }
 
