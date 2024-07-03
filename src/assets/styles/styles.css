@@ -24,6 +24,7 @@
 
 .light-mode {
   color: var(--color-brand); /* Regola questo valore per spostare l'icona */
+  font-size: 1.7em;
 }
 
 body {
