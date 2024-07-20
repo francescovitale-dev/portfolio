@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
 
 :root {
-  --color-body: #B0BEC5; /* Testo principale */
-  --color-heading: #FFFFFF; /* Testo secondario */
-  --color-base: #212121; /* Sfondo principale */
-  --color-base2: #161616; /* Sfondo sezioni */
-  --color-base2: #282828; /* Sfondo sezioni */
-  --color-brand: #03A9F4; /* Colore di marca */
-  --color-brand2: #86ceef;
+  --color-body: #B0BEC5; 
+  --color-heading: #FFFFFF; 
+  --color-base: #011322; 
+  --color-base2: #01080e; 
+  --color-brand: #fdfffc; 
+  --color-brand2: #B0BEC5;
   --sidbar-width: 240px;
   --font-base: "Bai Jamjuree";
 }
@@ -17,8 +16,8 @@
   --color-heading: #000000; 
   --color-base: #F5F5F5; 
   --color-base2: #FFFFFF; 
-  --color-brand: #03A9F4; 
-  --color-brand2: #86ceef;
+  --color-brand: #011627; 
+  --color-brand2: #022541;
   --sidbar-width: 240px;
   --font-base: "Bai Jamjuree";
 }
@@ -108,7 +107,7 @@ img {
 /* NAVBAR */
 
 .navbar {
-  background-color: var(--color-brand);
+  background-color: #011627;
 }
 
 .navbar .nav-link {
@@ -118,11 +117,11 @@ img {
 }
 
 .navbar .nav-link:hover {
-  color: var(--color-brand2);
+  color: rgb(188, 188, 188);
 }
 
 .navbar .nav-link.active {
-  color: var(--color-brand2);
+  color: rgb(188, 188, 188);
 }
 
 @media (min-width: 992px) {
@@ -133,7 +132,7 @@ img {
   }
 
   .navbar-brand img {
-    border: 3px solid var(--color-brand);
+    border: 3px solid rgb(188, 188, 188);
     width: 200px;
     height: 200px;
     object-fit: cover;
