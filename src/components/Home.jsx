@@ -135,7 +135,7 @@ const Home = () => {
             transition={{ duration: 0.5, delay: 1.5 }}
           >
             <Button asChild className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-primary-foreground group relative overflow-hidden">
-              <a href="https://github.com/francescovitale-dev/portfolio-website/raw/main/src/assets/images/francescovitale-cv.pdf" download className="flex items-center">
+              <a href="https://github.com/francescovitale-dev/portfolio/raw/main/src/assets/images/francescovitale-cv.pdf" download className="flex items-center">
                 <Download size={18} className="mr-2 relative z-10" /> 
                 <span className="relative z-10">Download Resume</span>
                 <motion.div
