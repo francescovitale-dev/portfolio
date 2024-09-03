@@ -11,7 +11,7 @@ const projectsData = [
     title: "UniCash",
     description: "Manage your student finances effortlessly with UniCash, powered by React, Node.js, Tailwind CSS, and shadcn/ui components.",
     image: Unicash,
-    githubLink: "https://github.com/francescovitale-dev/eurasmus",
+    githubLink: "https://github.com/francescovitale-dev/uni-cash",
     liveLink: "https://uni-cash.netlify.app"
   },
   {
