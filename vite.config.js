@@ -1,11 +1,12 @@
-const path = require('path')
+import path from "path"
+import react from "@vitejs/plugin-react"
+import { defineConfig } from "vite"
 
-export default {
-  root: path.resolve(__dirname, 'src'),
-  build: {
-    outDir: '../dist'
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
   },
-  server: {
-    port: 8080,
-  }
-}
+})
