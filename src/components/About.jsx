@@ -11,7 +11,7 @@ const About = () => {
       institution: "start2impact University",
       period: "2023 - 2024",
       description: "Comprehensive curriculum covering HTML, CSS, Git, JavaScript, React, Bootstrap, Node.js, Express.js and more.",
-      link: "https://raw.githubusercontent.com/francescovitale-dev/portoflio-website/dev/src/assets/images/master-attestato.png"
+      link: "https://raw.githubusercontent.com/francescovitale-dev/portfolio-website/dev/src/assets/images/master-attestato.png"
     },
     {
       title: "CS50x",
