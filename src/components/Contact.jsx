@@ -12,8 +12,8 @@ const userID = import.meta.env.VITE_EMAILJS_USER_ID
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    from_name: '',
+    email_id: '',
     subject: '',
     message: ''
   });
@@ -62,18 +62,18 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <Input
                     type="text"
-                    name="name"
+                    name="from_name"
                     placeholder="Your Name"
-                    value={formData.name}
+                    value={formData.from_name}
                     onChange={handleChange}
                     required
                     className="bg-background/50 backdrop-blur-sm"
                   />
                   <Input
                     type="email"
-                    name="email"
+                    name="email_id"
                     placeholder="Your Email"
-                    value={formData.email}
+                    value={formData.email_id}
                     onChange={handleChange}
                     required
                     className="bg-background/50 backdrop-blur-sm"
