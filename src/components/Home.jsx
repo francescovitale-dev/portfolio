@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import ProfilePicture from '../assets/images/me-picture.webp';
+import ProfilePicture from '../assets/images/me-picture1.webp';
+import ProfilePicture1 from '../assets/images/me-picture.webp';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download } from "lucide-react";
