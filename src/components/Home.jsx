@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ProfilePicture from '../assets/images/me-picture1.webp';
-import ProfilePicture1 from '../assets/images/me-picture.webp';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Download } from "lucide-react";
+import AnimatedLine from './AnimatedLine';
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -68,7 +68,7 @@ const Home = () => {
         </motion.div>
 
         <motion.div
-          className="mt-2 mb-4 space-y-8"
+          className="mt-2 mb-4 space-y-5 md:space-y-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
@@ -151,13 +151,7 @@ const Home = () => {
         </motion.div>
       </div>
 
-      <motion.div
-        className="absolute bottom-0 transform -translate-x-1/2 w-full h-1 bg-gradient-to-r from-primary to-secondary"
-        initial={{ opacity: 0, scaleX: 0 }}
-        whileInView={{ opacity: 1, scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      />
+      <AnimatedLine />
     </section>
   );
 }

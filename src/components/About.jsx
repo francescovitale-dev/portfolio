@@ -1,8 +1,8 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from 'lucide-react';
+import AnimatedLine from './AnimatedLine';
 
 const About = () => {
   const education = [
@@ -135,13 +135,7 @@ const About = () => {
           </div>
       </div>
 
-      <motion.div
-        className="absolute bottom-0 transform -translate-x-1/2 w-full h-1 bg-gradient-to-r from-primary to-secondary"
-        initial={{ opacity: 0, scaleX: 0 }}
-        whileInView={{ opacity: 1, scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      />
+      <AnimatedLine />
     </section>
   );
 };
