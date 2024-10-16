@@ -29,7 +29,7 @@ const Contact = () => {
     try {
       await emailjs.send('service_0e6fqgp', 'template_cuwcyme', formData, userID);
       toast.success('Message sent successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ from_name: '', email_id: '', subject: '', message: '' });
     } catch (error) {
       toast.error('Failed to send message. Please try again.');
     } finally {
