@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import Layout from './layouts/Layout';
 import Home from './components/Home';
