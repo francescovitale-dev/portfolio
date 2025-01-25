@@ -87,7 +87,7 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.9 }}
           >
-            Full Stack Developer
+            Software Developer
           </motion.h1>
           <motion.p 
             className="mb-8 max-w-2xl mx-auto text-muted-foreground leading-relaxed"
@@ -95,10 +95,7 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.1 }}
           >
-            As a devoted traveler, I've discovered that the web is an infinite world to explore, 
-            just as much as the places I've visited.
-            <br />
-            Keep scrolling to delve into the projects I've created while journeying between the real and digital worlds.
+            Scroll down to check out the projects I've developed, where I’ve combined creativity and technical skills to bring ideas to life.
           </motion.p>
           <motion.div 
             className="flex justify-center space-x-6 mb-8"

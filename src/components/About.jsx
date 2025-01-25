@@ -1,143 +1,186 @@
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from 'lucide-react';
-import AnimatedLine from './AnimatedLine';
+import { ExternalLink, BookOpen, Briefcase, Award } from "lucide-react";
 
-const About = () => {
-  const education = [
+const CoolTimeline = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const timelineData = [
     {
+      type: "experience",
+      title: "Software Developer",
+      organization: "Poseidon s.b.",
+      subtitle: "Internship · Hybrid",
+      period: "October 2024 - Present",
+      location: "Catania, Sicily, Italy",
+      icon: Briefcase,
+      color: "from-violet-500 to-fuchsia-500"
+    },
+    {
+      type: "education",
       title: "Bachelor's Degree in Computer Science",
-      institution: "OPIT - Open Institute of Technology",
+      organization: "OPIT - Open Institute of Technology",
       period: "September 2024 - September 2027",
-      description: "Pursuing a comprehensive degree in Computer Science, focusing on modern technologies and practical applications in software development.",
+      icon: BookOpen,
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      title: "Professional Training in Full Stack Development",
-      institution: "START2IMPACT",
+      type: "education",
+      title: "Full Stack Development",
+      organization: "START2IMPACT",
       period: "September 2023 - April 2024",
-      description: "Completed with a perfect score of 1500/1500. Comprehensive curriculum covering HTML, CSS, Git, JavaScript, React, Bootstrap, Node.js, Express.js and more.",
-      link: "https://raw.githubusercontent.com/francescovitale-dev/portfolio/dev/src/assets/images/master-attestato.png"
+      description: "Score: 1500/1500",
+      link: "#",
+      icon: Award,
+      color: "from-emerald-500 to-teal-500"
     },
-  ];
-
-  const certifications = [
     {
+      type: "certification",
       title: "CS50x",
-      institution: "Harvard Online",
-      period: "Issued May 2024",
-      description: "Explored algorithms, data structures, and programming essentials. Developed familiarity with C, Python, and SQL. Emphasized problem-solving with a focus on implementing good code design principles.",
-      link: "https://certificates.cs50.io/c52b5631-c7db-4e86-81d3-866b3cd17f83.png?size=letter"
+      organization: "Harvard Online",
+      period: "May 2024",
+      description: "Algorithms, Data Structures, C, Python, SQL",
+      link: "#",
+      icon: Award,
+      color: "from-rose-500 to-orange-500"
     }
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % timelineData.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id="about" className="py-16 md:py-28 bg-background bg-gradient-to-bl from-primary/5 to-secondary/5 backdrop-blur-sm">
+    <section className="py-16 bg-gradient-to-b from-black/10 to-black/5 backdrop-blur-xl">
       <div className="container mx-auto px-4">
-        <motion.h2 
-          className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+        <motion.h2
+          className="text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
         >
-        About
+          Journey
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Card className="h-full">
-              <CardHeader>
-                <CardTitle className="text-2xl">Who am I?</CardTitle>
-              </CardHeader>
-              <CardContent className="text-lg text-gray-500 dark:text-gray-400">
-                <p className="mb-4">
-                I'm a 21-year-old who enjoys coding and exploring the world, eager to discover new places and share authentic moments with people. Reading is another passion of mine, books are a constant source of inspiration and learning for me. Every day presents an opportunity to learn something new and approach the world with wide-open eyes.
-                </p>
-                <p className="mb-4">
-                If you share interests in technology, travel, reading, entrepreneurship or simply being curious, I'm open to new connections!
-                </p>
-                <p>
-                Feel free to say hello and share your experiences!
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
+        <div className="relative min-h-[500px]">
+          <div className="flex justify-center items-center">
+            <AnimatePresence mode="wait">
+              {timelineData.map((item, index) => {
+                const Icon = item.icon;
+                if (index !== activeIndex) return null;
+                
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                    transition={{ 
+                      duration: 0.5,
+                      type: "spring",
+                      stiffness: 100
+                    }}
+                    className="w-full max-w-2xl"
+                  >
+                    <Card className="group backdrop-blur-xl bg-black/10 border border-white/20 hover:border-primary/40 transition-all duration-500 overflow-hidden h-80">
+                      <div className={`
+                        absolute inset-0 opacity-0 group-hover:opacity-10
+                        bg-gradient-to-br ${item.color}
+                        blur-xl transition-all duration-700
+                        -z-10
+                      `} />
 
-          <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">Education</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="relative border-l border-gray-200 dark:border-gray-700">
-                    {education.map((item, index) => (
-                      <div key={index} className="mb-10 ml-4">
-                        <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                        <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{item.period}</time>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{item.title}</h3>
-                        <p className="mb-2 text-base font-normal text-gray-500 dark:text-gray-400">{item.institution}</p>
-                        <p className="text-base font-normal text-gray-500 dark:text-gray-400">{item.description}</p>
+                      <div className="p-8 relative h-full flex flex-col">
+                        <div className="flex items-center gap-4 mb-4">
+                          <motion.div 
+                            className={`
+                              p-3 rounded-2xl
+                              bg-gradient-to-br ${item.color}
+                              shadow-lg
+                            `}
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                          >
+                            <Icon className="w-6 h-6 text-white" />
+                          </motion.div>
+                          <time className="text-base font-medium opacity-70">
+                            {item.period}
+                          </time>
+                        </div>
+
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/90">
+                            {item.title}
+                          </h3>
+
+                          <p className="text-lg font-medium mb-2 opacity-90">
+                            {item.organization}
+                          </p>
+
+                          {item.subtitle && (
+                            <p className="text-base opacity-70 mb-2">
+                              {item.subtitle}
+                            </p>
+                          )}
+
+                          {item.description && (
+                            <p className="text-base opacity-70">
+                              {item.description}
+                            </p>
+                          )}
+                        </div>
+
                         {item.link && (
-                          <Button asChild variant="link" className="text-primary p-0 hover:underline mt-2">
-                            <a href={item.link} target="_blank" rel="noopener noreferrer">
-                              View Certification <ExternalLink className="ml-2 h-4 w-4" />
-                            </a>
-                          </Button>
+                          <div className="mt-4">
+                            <Button
+                              variant="outline"
+                              size="lg"
+                              className="group/btn hover:bg-white/10 border-white/20"
+                            >
+                              <span className="mr-2 group-hover/btn:text-primary transition-colors">
+                                View Certificate
+                              </span>
+                              <ExternalLink className="w-4 h-4 group-hover/btn:text-primary transition-colors" />
+                            </Button>
+                          </div>
                         )}
                       </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-        </div>
-
-        <div className="space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">Certifications</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="relative border-l border-gray-200 dark:border-gray-700">
-                    {certifications.map((item, index) => (
-                      <div key={index} className="mb-10 ml-4">
-                        <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-                        <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{item.period}</time>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{item.title}</h3>
-                        <p className="mb-2 text-base font-normal text-gray-500 dark:text-gray-400">{item.institution}</p>
-                        <p className="text-base font-normal text-gray-500 dark:text-gray-400">{item.description}</p>
-                        {item.link && (
-                          <Button asChild variant="link" className="text-primary p-0 hover:underline mt-2">
-                            <a href={item.link} target="_blank" rel="noopener noreferrer">
-                              View Certification <ExternalLink className="ml-2 h-4 w-4" />
-                            </a>
-                          </Button>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+                    </Card>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
           </div>
-      </div>
 
-      <AnimatedLine />
+          <div className="flex justify-center gap-3 mt-10">
+            {timelineData.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className="group focus:outline-none"
+              >
+                <div className={`
+                  relative h-3 rounded-full transition-all duration-500
+                  ${activeIndex === index ? 'w-12 bg-gradient-to-r from-primary to-secondary' : 'w-3 bg-white/20'}
+                  hover:bg-white/40
+                `}>
+                  <div className={`
+                    absolute inset-0 blur-sm opacity-50
+                    ${activeIndex === index ? 'bg-gradient-to-r from-primary to-secondary' : ''}
+                  `} />
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
 
-export default About;
+export default CoolTimeline;
