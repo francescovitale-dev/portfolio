@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import Nana from "../assets/images/nana.webp";
 import Unicash from "../assets/images/unicash.webp";
-import Neverappedi from "../assets/images/neverappedi.png";
+import Neverappedi from "../assets/images/neverappedi.webp";
 import { motion, useAnimation, useInView } from "framer-motion";
 import {
   Card,
