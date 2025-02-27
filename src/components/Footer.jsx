@@ -1,12 +1,14 @@
 import { Github, Linkedin, Instagram } from "lucide-react";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-background border-t border-border py-6">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            © 2024 Francesco Vitale. All rights reserved.
+            © {currentYear} Francesco Vitale. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <a href="https://www.instagram.com/vitale_francesco_/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
