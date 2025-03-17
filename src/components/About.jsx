@@ -52,7 +52,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="py-16 bg-background">
+    <section id="about" className="min-h-screen px-4 flex items-center justify-center py-16 bg-background">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-center mb-12 text-foreground"
