@@ -87,14 +87,14 @@ const Home = () => {
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div 
-          className="flex flex-col md:flex-row md:items-center md:gap-20 lg:gap-24"
+          className="flex flex-col md:flex-row md:items-center md:gap-12 lg:gap-24"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Profile Image */}
           <motion.div
-            className="relative mb-12 md:mb-0 flex-shrink-0 mx-auto md:mx-0"
+            className="relative mb-6 md:mb-0 flex-shrink-0 mx-auto md:mx-0"
             variants={itemVariants}
           >
             <motion.div
@@ -111,7 +111,7 @@ const Home = () => {
             <motion.img
               src={ProfilePicture}
               alt="Profile picture"
-              className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover border border-primary/20 shadow-sm relative z-10"
+              className="w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover border border-primary/20 shadow-sm relative z-10"
               variants={profileVariants}
               whileHover="hover"
               onHoverStart={() => setIsHovered(true)}
@@ -133,7 +133,7 @@ const Home = () => {
           </motion.div>
 
           {/* Content */}
-          <div className="flex flex-col text-center md:text-left space-y-6 md:space-y-7">
+          <div className="flex flex-col text-center md:text-left space-y-4 md:space-y-7">
             <motion.div variants={itemVariants} className="mx-auto md:mx-0">
               <motion.h1 
                 className="text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-2"
@@ -168,7 +168,7 @@ const Home = () => {
             </motion.p>
 
             <motion.div 
-              className="flex justify-center md:justify-start space-x-8 pt-2"
+              className="flex justify-center md:justify-start space-x-8 pt-1"
               variants={itemVariants}
             >
               <motion.a 
@@ -190,7 +190,7 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-              className="flex flex-col sm:flex-row pt-3 gap-4 items-center justify-center md:justify-start"
+              className="flex flex-col sm:flex-row pt-2 gap-3 items-center justify-center md:justify-start"
               variants={itemVariants}
             >
               <motion.div whileHover={{ scale: 1.05 }} className="w-full sm:w-auto">
