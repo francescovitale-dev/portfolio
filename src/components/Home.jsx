@@ -178,7 +178,7 @@ const Home = () => {
               variants={itemVariants}
             >
               <Button asChild className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground rounded-md group relative overflow-hidden">
-                <a href="https://calendly.com/vitalefrancesco/30min" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <a href="https://cal.com/francesco-vitale/30" target="_blank" rel="noopener noreferrer" className="flex items-center">
                   <Calendar size={16} className="mr-2 relative z-10" /> 
                   <span className="relative z-10">Schedule a Call</span>
                   <motion.div

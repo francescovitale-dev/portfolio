@@ -85,14 +85,6 @@ const Contact = () => {
       />
 
       <div className="container px-4 sm:px-6 relative z-10">
-        <motion.h2 
-          className="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          Let's Connect
-        </motion.h2>
         
         <motion.div
           variants={cardVariants}
@@ -159,7 +151,7 @@ const Contact = () => {
                       className="rounded-full text-sm sm:text-base font-medium group relative overflow-hidden w-full"
                     >
                       <a 
-                        href="https://calendly.com/vitalefrancesco/30min" 
+                        href="https://cal.com/francesco-vitale/30" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="flex items-center justify-center gap-2 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6"

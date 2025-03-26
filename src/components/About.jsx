@@ -16,11 +16,9 @@ import {
 const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
-  const [progressValue, setProgressValue] = useState(0);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
   const controls = useAnimation();
-  const progressIntervalRef = useRef(null);
 
   // Marketing insight: Using storytelling to create an emotional connection
   const timelineData = [
@@ -88,29 +86,6 @@ const About = () => {
       skills: ["C", "Python", "SQL", "JavaScript", "Data Structures"]
     }
   ];
-
-  // Auto-rotate between timeline items with visual progress indicator
-  useEffect(() => {
-    if (autoplay) {
-      const slideDuration = 6000; // 6 seconds per slide
-      const updateInterval = 30; // Update progress every 30ms
-      const step = (100 * updateInterval) / slideDuration;
-      
-      setProgressValue(0);
-      
-      progressIntervalRef.current = setInterval(() => {
-        setProgressValue(prev => {
-          if (prev >= 100) {
-            setActiveIndex((current) => (current + 1) % timelineData.length);
-            return 0;
-          }
-          return prev + step;
-        });
-      }, updateInterval);
-      
-      return () => clearInterval(progressIntervalRef.current);
-    }
-  }, [activeIndex, autoplay, timelineData.length]);
 
   // Start animations when section is in view
   useEffect(() => {
@@ -226,15 +201,6 @@ const About = () => {
 
         {/* Timeline Cards - Marketing insight: Storytelling creates emotional connection */}
         <div className="relative">
-          {/* Progress bar for autoplay */}
-          {autoplay && (
-            <motion.div
-              initial={{ width: '0%' }}
-              animate={{ width: `${progressValue}%` }}
-              className="absolute -top-2 left-0 h-1 bg-primary/50 rounded-full z-10"
-              transition={{ duration: 0.1, ease: "linear" }}
-            />
-          )}
           
           {/* Timeline Card */}
           <div className="flex justify-center items-center min-h-[500px]">
