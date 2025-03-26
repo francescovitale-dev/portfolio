@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useAnimation, useInView, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, Mail, Github, Linkedin, ArrowRight, MessageCircle } from "lucide-react";
+import { Calendar, Mail, ArrowRight, MessageCircle, CheckCircle } from "lucide-react";
 
 const Contact = () => {
   const sectionRef = useRef(null);
@@ -66,18 +66,11 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className="py-24 md:py-32 bg-background relative overflow-hidden"
+      className="py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden"
       ref={sectionRef}
     >
       {/* Background effects */}
       <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,_var(--primary)_0%,_transparent_70%)]" />
-      
-      <motion.div 
-        className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzMzMiIGZpbGwtb3BhY2l0eT0iMC4wMSI+PHBhdGggZD0iTTM2IDM0aDR2MWgtNHYtMXptMC0yaDF2NGgtMXYtNHptMi0yaDF2MWgtMXYtMXptLTIgMmgxdjFoLTF2LTF6bS0yLTJoMXYxaC0xdi0xem0yLTJoMXYxaC0xdi0xem0tMi0yaDF2MWgtMXYtMXptLTItMmgxdjFoLTF2LTF6bS0yIDEyaDR2MWgtNHYtMXptMC0yaDF2NGgtMXYtNHptMi0yaDF2MWgtMXYtMXptLTIgMmgxdjFoLTF2LTF6bS0yLTJoMXYxaC0xdi0xem0yLTJoMXYxaC0xdi0xem0tMi0yaDF2MWgtMXYtMXptLTItMmgxdjFoLTF2LTF6Ii8+PC9nPjwvZz48L3N2Zz4=')] bg-[size:60px_60px] bg-opacity-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.3 }}
-        transition={{ duration: 2 }}
-      />
       
       <motion.div
         className="absolute inset-0"
@@ -91,97 +84,101 @@ const Contact = () => {
         }}
       />
 
-      <div className="container relative z-10">
-        <motion.div
+      <div className="container px-4 sm:px-6 relative z-10">
+        <motion.h2 
+          className="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-16 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
           initial={{ opacity: 0, y: -20 }}
-          animate={controls}
-          variants={{
-            hidden: { opacity: 0, y: -20 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-          }}
-          className="mb-16 md:mb-20 text-center"
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <motion.span 
-            className="inline-block text-sm font-medium text-primary uppercase tracking-wider mb-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            Ready when you are
-          </motion.span>
-          
-          <motion.h2 
-            className="text-5xl md:text-6xl font-bold"
-            initial={{ backgroundPosition: '0% 50%' }}
-            animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-            transition={{ duration: 8, repeat: Infinity, repeatDelay: 5 }}
-            style={{
-              backgroundImage: 'linear-gradient(90deg, var(--foreground), var(--primary), var(--foreground))',
-              backgroundSize: '200% auto',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}
-          >
-            Let's Connect
-          </motion.h2>
-        </motion.div>
+          Let's Connect
+        </motion.h2>
         
         <motion.div
           variants={cardVariants}
           initial="hidden"
           animate={controls}
-          className="max-w-3xl mx-auto"
+          className="max-w-4xl mx-auto"
         >
           <Card 
             className="relative overflow-hidden border border-primary/10 bg-background/60 backdrop-blur-md shadow-xl"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            <CardContent className="p-10 md:p-12 relative z-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            
+            <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12 relative z-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
                 {/* Left side: Calendar Info */}
-                <div className="text-center md:text-left">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4">Schedule a Call</h3>
-                  <p className="text-muted-foreground mb-6 md:pr-6">
-                    Book a time directly on my calendar. Let's discuss your project, explore collaboration opportunities, or just chat about technology.
+                <div className="text-left">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4">Schedule a Call</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4 md:mb-6">
+                    Take the first step toward transforming your vision into reality. Let's discuss how I can help bring your ideas to life.
                   </p>
                   
-                  <div className="flex flex-col gap-4 md:items-start items-center">
-                    
+                  {/* Value propositions with icons */}
+                  <div className="space-y-2 sm:space-y-3 mb-4 md:mb-6">
                     <motion.div 
-                      whileHover={{ 
-                        scale: 1.05,
-                        transition: { duration: 0.2 } 
-                      }}
-                      whileTap={{ scale: 0.98 }}
+                      className="flex items-start gap-2 sm:gap-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.8 }}
                     >
-                      <Button 
-                        asChild 
-                        size="lg" 
-                        className="rounded-full text-base font-medium group relative overflow-hidden"
-                      >
-                        <a 
-                          href="https://calendly.com/francesco-vitale" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="flex items-center gap-2 px-8 py-6"
-                        >
-                          <span>Open My Calendar</span>
-                          <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                          <motion.div
-                            className="absolute inset-0 bg-primary/10"
-                            initial={{ x: '-100%' }}
-                            whileHover={{ x: '100%' }}
-                            transition={{ duration: 0.4 }}
-                          />
-                        </a>
-                      </Button>
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <p className="text-xs sm:text-sm">Tailored solutions that align with your business goals</p>
+                    </motion.div>
+                    <motion.div 
+                      className="flex items-start gap-2 sm:gap-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.0 }}
+                    >
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <p className="text-xs sm:text-sm">Technical expertise with a focus on user experience</p>
+                    </motion.div>
+                    <motion.div 
+                      className="flex items-start gap-2 sm:gap-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.2 }}
+                    >
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <p className="text-xs sm:text-sm">Clear communication throughout the entire process</p>
                     </motion.div>
                   </div>
+                  
+                  <motion.div 
+                    whileHover={{ 
+                      scale: 1.05,
+                      transition: { duration: 0.2 } 
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Button 
+                      asChild 
+                      size="lg" 
+                      className="rounded-full text-sm sm:text-base font-medium group relative overflow-hidden w-full"
+                    >
+                      <a 
+                        href="https://calendly.com/vitalefrancesco/30min" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="flex items-center justify-center gap-2 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6"
+                      >
+                        <span>Book Your Free Consultation</span>
+                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                        <motion.div
+                          className="absolute inset-0 bg-primary/10"
+                          initial={{ x: '-100%' }}
+                          whileHover={{ x: '100%' }}
+                          transition={{ duration: 0.4 }}
+                        />
+                      </a>
+                    </Button>
+                  </motion.div>
                 </div>
                 
                 {/* Right side: Floating Calendar Icon */}
-                <div className="flex justify-center relative h-60">
+                <div className="flex justify-center items-center relative h-40 sm:h-48 md:h-60">
                   <motion.div
                     className="absolute"
                     variants={floatingIconVariants}
@@ -191,7 +188,7 @@ const Contact = () => {
                     <div className="relative">
                       {/* Decorative blobs */}
                       <motion.div 
-                        className="absolute -inset-6 rounded-full bg-primary/5 blur-xl"
+                        className="absolute -inset-8 sm:-inset-10 md:-inset-12 rounded-full bg-primary/5 blur-xl"
                         animate={{ 
                           scale: [1, 1.2, 1],
                         }}
@@ -202,8 +199,18 @@ const Contact = () => {
                         }}
                       />
                       
-                      <div className="relative bg-background/80 backdrop-blur-sm shadow-lg p-6 rounded-xl">
-                        <Calendar className="w-24 h-24 text-primary" />
+                      <div className="relative bg-background/80 backdrop-blur-sm shadow-lg p-4 sm:p-5 md:p-6 rounded-xl border border-primary/10">
+                        <Calendar className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 text-primary" />
+                        
+                        {/* Mini info box overlapping the icon */}
+                        <motion.div 
+                          className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 bg-background border border-primary/20 px-2 py-1 md:px-3 md:py-1.5 rounded-lg shadow-lg text-xs sm:text-sm font-medium"
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ delay: 1.3 }}
+                        >
+                          30-min Call
+                        </motion.div>
                       </div>
                       
                       {/* Small orbit elements */}
@@ -211,22 +218,22 @@ const Contact = () => {
                         {isHovering && (
                           <>
                             <motion.div 
-                              className="absolute -top-4 -right-4 bg-primary/20 p-2 rounded-full" 
+                              className="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-primary/20 p-1.5 md:p-2 rounded-full" 
                               initial={{ scale: 0, opacity: 0 }}
                               animate={{ scale: 1, opacity: 1 }}
                               exit={{ scale: 0, opacity: 0 }}
                               transition={{ delay: 0.1 }}
                             >
-                              <MessageCircle className="w-4 h-4 text-primary" />
+                              <MessageCircle className="w-3 h-3 md:w-4 md:h-4 text-primary" />
                             </motion.div>
                             <motion.div 
-                              className="absolute -bottom-4 -left-4 bg-primary/20 p-2 rounded-full"
+                              className="absolute -bottom-3 -left-3 md:-bottom-4 md:-left-4 bg-primary/20 p-1.5 md:p-2 rounded-full"
                               initial={{ scale: 0, opacity: 0 }}
                               animate={{ scale: 1, opacity: 1 }}
                               exit={{ scale: 0, opacity: 0 }}
                               transition={{ delay: 0.2 }}
                             >
-                              <Mail className="w-4 h-4 text-primary" />
+                              <Mail className="w-3 h-3 md:w-4 md:h-4 text-primary" />
                             </motion.div>
                           </>
                         )}
@@ -235,57 +242,12 @@ const Contact = () => {
                   </motion.div>
                 </div>
               </div>
-              
-              {/* Alternative contact options */}
-              <motion.div 
-                className="mt-12 pt-8 border-t border-primary/10 flex flex-wrap justify-center md:justify-between gap-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { delay: 1, duration: 0.4 }
-                }}
-              >
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Mail className="w-4 h-4 text-primary" />
-                    <span className="text-sm font-medium">Email</span>
-                  </div>
-                  <a 
-                    href="mailto:vitalefrancesco@email.com" 
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    vitalefrancesco@email.com
-                  </a>
-                </div>
-                
-                <div className="flex items-center gap-6">
-                  <motion.a 
-                    href="https://github.com/francescovitale-dev" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-background/80 border border-border hover:border-primary/30 transition-colors"
-                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                  >
-                    <Github className="w-5 h-5" />
-                  </motion.a>
-                  
-                  <motion.a 
-                    href="https://www.linkedin.com/in/francesco-vitale--/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-background/80 border border-border hover:border-primary/30 transition-colors"
-                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </motion.a>
-                </div>
-              </motion.div>
+            
             </CardContent>
             
             {/* Background design elements */}
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+            <div className="absolute -top-16 -right-16 sm:-top-20 sm:-right-20 md:-top-24 md:-right-24 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-primary/5 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-20 -left-20 sm:-bottom-24 sm:-left-24 md:-bottom-32 md:-left-32 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-primary/5 rounded-full blur-3xl"></div>
             
             <motion.div 
               className="absolute inset-0 bg-gradient-to-tr from-background/0 via-primary/5 to-background/0 opacity-0"
