@@ -3,7 +3,6 @@ import { motion, AnimatePresence, useAnimation, useInView } from "framer-motion"
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, BookOpen, Briefcase, Award, ChevronLeft, ChevronRight } from "lucide-react";
-import AnimatedLine from "./AnimatedLine";
 
 const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);

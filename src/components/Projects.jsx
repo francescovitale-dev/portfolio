@@ -13,7 +13,6 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
-import AnimatedLine from "./AnimatedLine";
 
 const projectsData = [
   {
