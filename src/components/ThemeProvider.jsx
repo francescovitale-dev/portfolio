@@ -1,39 +1,23 @@
-import { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useEffect } from "react"
 
 const ThemeProviderContext = createContext()
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
-  storageKey = "vite-ui-theme",
   ...props
 }) {
-  const [theme, setTheme] = useState(
-    () => localStorage.getItem(storageKey) || defaultTheme
-  )
-
+  // Force dark theme
   useEffect(() => {
     const root = window.document.documentElement
-    root.classList.remove("light", "dark")
+    root.classList.remove("light")
+    root.classList.add("dark")
+  }, [])
 
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light"
-      root.classList.add(systemTheme)
-      return
-    }
-
-    root.classList.add(theme)
-  }, [theme])
-
+  // Simplified context value - theme is always "dark"
   const value = {
-    theme,
-    setTheme: (theme) => {
-      localStorage.setItem(storageKey, theme)
-      setTheme(theme)
-    },
+    theme: "dark",
+    // Keep setTheme for API compatibility but make it a no-op
+    setTheme: () => {}
   }
 
   return (
