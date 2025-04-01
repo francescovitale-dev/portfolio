@@ -56,7 +56,7 @@ const Home = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen px-4 lg:px-16 flex items-center justify-center bg-black text-white relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-grid-white/[0.03] bg-[size:50px_50px]" />
       
@@ -73,16 +73,16 @@ const Home = () => {
         }}
       />
       
-      <div className="container mx-auto max-w-5xl relative z-10">
+      <div className="container mx-auto px-4 lg:px-8 max-w-5xl relative z-10 flex justify-center items-center">
         <motion.div 
-          className="flex flex-col md:flex-row md:items-center md:gap-8 lg:gap-16"
+          className="flex flex-col items-center w-full"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Profile Image */}
           <motion.div
-            className="relative mb-4 md:mb-0 flex-shrink-0 mx-auto md:mx-0"
+            className="relative mb-6 flex-shrink-0"
             variants={itemVariants}
           >
             <motion.div
@@ -121,7 +121,7 @@ const Home = () => {
           </motion.div>
 
           {/* Content */}
-          <div className="flex flex-col text-center md:text-left space-y-3">
+          <div className="flex flex-col text-center space-y-3 w-full max-w-2xl">
             <motion.div variants={itemVariants}>
               <motion.p 
                 className="text-lg text-primary font-semibold mb-1"
@@ -138,7 +138,7 @@ const Home = () => {
             </motion.div>
 
             <motion.p 
-              className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto md:mx-0"
+              className="text-base text-muted-foreground leading-relaxed mx-auto"
               variants={itemVariants}
             >
               Building modern web applications with clean, efficient code. Focused on creating 
@@ -146,7 +146,7 @@ const Home = () => {
             </motion.p>
 
             <motion.div 
-              className="flex justify-center md:justify-start space-x-4 pt-1"
+              className="flex justify-center space-x-4 pt-1"
               variants={itemVariants}
             >
               <a href="https://www.linkedin.com/in/francesco-vitale--/" target="_blank" rel="noopener noreferrer" className="group">
@@ -174,7 +174,7 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-              className="flex flex-col sm:flex-row pt-2 gap-3 items-center justify-center md:justify-start"
+              className="flex pt-2 gap-3 items-center justify-center"
               variants={itemVariants}
             >
               <Button asChild className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground rounded-md group relative overflow-hidden">
@@ -192,7 +192,6 @@ const Home = () => {
             </motion.div>
           </div>
         </motion.div>
-        
       </div>
     </section>
   );
