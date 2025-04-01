@@ -38,7 +38,6 @@ const projectsData = [
     description:
       "Savor authentic Italian cuisine at Naná, a React and Vanilla CSS creation embodying a true Italian restaurant experience in Frankfurt.",
     image: Nana,
-    githubLink: "https://github.com/francescovitale-dev/nana",
     liveLink: "https://xn--nanconvivial-ebb.de/",
     tech: ["React", "Vanilla CSS"]
   },
