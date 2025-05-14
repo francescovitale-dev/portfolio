@@ -12,6 +12,7 @@ import {
   ChevronRight,
   Star
 } from "lucide-react";
+import SEO from "./SEO";
 
 const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -154,6 +155,12 @@ const About = () => {
       className="py-24 md:py-32 bg-background relative overflow-hidden"
       ref={sectionRef}
     >
+      <SEO 
+        title="About Me"
+        description="Learn about my professional journey, education, and expertise in software development. Discover my passion for creating innovative web solutions."
+        url="https://www.vitalefrancesco.com/#about"
+      />
+      
       {/* Visual elements for enhanced aesthetics */}
       <div className="absolute inset-0 opacity-5 bg-[radial-gradient(ellipse_at_bottom_right,_var(--primary)_0%,_transparent_70%)]" />
       

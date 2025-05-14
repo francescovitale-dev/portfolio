@@ -3,6 +3,7 @@ import ProfilePicture from '../assets/images/me-picture1.webp';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Calendar } from "lucide-react";
+import SEO from "./SEO";
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -57,6 +58,12 @@ const Home = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
+      <SEO 
+        title="Home"
+        description="Welcome to my portfolio. I'm a Software Developer specializing in modern web development, creating intuitive and responsive user experiences."
+        url="https://www.vitalefrancesco.com/#home"
+      />
+      
       {/* Background effects */}
       <div className="absolute inset-0 bg-grid-white/[0.03] bg-[size:50px_50px]" />
       

@@ -5,10 +5,12 @@ import Projects from './components/Projects';
 import About from './components/About';
 import Contact from './components/Contact';
 import { Toaster } from 'react-hot-toast';
+import SEO from './components/SEO';
 
 const App = () => {
   return (
     <Layout>
+      <SEO />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

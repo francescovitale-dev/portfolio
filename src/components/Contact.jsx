@@ -3,6 +3,7 @@ import { motion, useAnimation, useInView, AnimatePresence } from 'framer-motion'
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Mail, ArrowRight, MessageCircle, CheckCircle } from "lucide-react";
+import SEO from "./SEO";
 
 const Contact = () => {
   const sectionRef = useRef(null);
@@ -66,9 +67,15 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className="py-16 md:py-24 lg:py-32 bg-background relative overflow-hidden"
+      className="py-24 md:py-32 bg-background relative overflow-hidden"
       ref={sectionRef}
     >
+      <SEO 
+        title="Contact Me"
+        description="Get in touch with me for collaboration opportunities, project inquiries, or just to say hello. I'm always open to discussing new ideas and opportunities."
+        url="https://www.vitalefrancesco.com/#contact"
+      />
+      
       {/* Background effects */}
       <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,_var(--primary)_0%,_transparent_70%)]" />
       
