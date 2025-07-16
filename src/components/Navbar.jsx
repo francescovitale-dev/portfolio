@@ -4,71 +4,64 @@ import { Home, FolderKanban, User, Mail } from 'lucide-react';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [isNavigating, setIsNavigating] = useState(false);
 
   useEffect(() => {
-    // Function to determine which section is currently in view
     const handleScroll = () => {
+      if (isNavigating) return; // Don't update during manual navigation
+      
       const sections = ['home', 'projects', 'about', 'contact'];
+      const scrollPosition = window.scrollY + 100;
       
-      // Get the current scroll position
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-      
-      // Find which section is currently in view
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
           
-          if (
-            scrollPosition >= offsetTop && 
-            scrollPosition < offsetTop + offsetHeight
-          ) {
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
             break;
           }
         }
       }
     };
-    
-    // Add scroll event listener
+
     window.addEventListener('scroll', handleScroll);
-    
-    // Call once to set initial active section
     handleScroll();
     
-    // Cleanup
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isNavigating]);
 
-  // Link components with active state
-  const NavLink = ({ href, icon: Icon, title, section }) => {
+  const handleNavClick = (sectionId) => {
+    setActiveSection(sectionId); // Set immediately
+    setIsNavigating(true);
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      
+      // Re-enable scroll detection after scroll completes
+      setTimeout(() => {
+        setIsNavigating(false);
+      }, 1000);
+    }
+  };
+
+  const NavLink = ({ section, icon: Icon, title }) => {
     const isActive = activeSection === section;
     
     return (
-      <a 
-        href={href} 
-        className={`relative flex items-center justify-center transition-colors ${
+      <button
+        onClick={() => handleNavClick(section)}
+        className={`relative flex items-center justify-center p-2 rounded-full transition-all duration-200 ${
           isActive 
-            ? 'text-primary' 
-            : 'text-muted-foreground hover:text-primary'
-        }`} 
+            ? 'text-primary bg-primary/10' 
+            : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
+        }`}
         title={title}
       >
-        <span className="p-1.5 sm:p-2 rounded-full relative z-10">
-          <Icon 
-            size={18} 
-            className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ease-out" 
-          />
-        </span>
-        {isActive && (
-          <motion.div
-            layoutId="activeSection"
-            className="absolute inset-0 bg-primary/15 rounded-full"
-            initial={false}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          />
-        )}
-      </a>
+        <Icon size={18} className="w-4 h-4 sm:w-5 sm:h-5" />
+      </button>
     );
   };
 
@@ -78,17 +71,17 @@ const Navbar = () => {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="px-3 py-1.5 sm:px-4 sm:py-2.5 bg-background/80 backdrop-blur-md border border-border/40 rounded-full shadow-md"
+        className="px-3 py-2 sm:px-4 sm:py-3 bg-background/80 backdrop-blur-md border border-border/40 rounded-full shadow-md"
       >
-        <div className="flex space-x-3 sm:space-x-6 items-center">
-          <NavLink href="#home" icon={Home} title="Home" section="home" />
-          <NavLink href="#projects" icon={FolderKanban} title="Projects" section="projects" />
-          <NavLink href="#about" icon={User} title="About" section="about" />
-          <NavLink href="#contact" icon={Mail} title="Contact" section="contact" />
+        <div className="flex space-x-2 sm:space-x-4 items-center">
+          <NavLink section="home" icon={Home} title="Home" />
+          <NavLink section="projects" icon={FolderKanban} title="Projects" />
+          <NavLink section="about" icon={User} title="About" />
+          <NavLink section="contact" icon={Mail} title="Contact" />
         </div>
       </motion.nav>
     </div>
   );
-}
+};
 
 export default Navbar;
