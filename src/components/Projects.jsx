@@ -335,7 +335,7 @@ const ProjectCard = ({ project, index }) => {
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const controls = useAnimation();
 
   useEffect(() => {
