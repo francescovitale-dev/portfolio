@@ -2,26 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ElevenLabs Widget Mobile Responsiveness */
-.elevenlabs-widget {
-  /* Default desktop positioning */
-  position: fixed !important;
-  bottom: 20px !important;
-  right: 20px !important;
-  z-index: 1000 !important;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .elevenlabs-widget {
-    bottom: 15px !important;
-    right: 15px !important;
-    /* Ensure it doesn't interfere with mobile UI */
-    max-width: calc(100vw - 30px) !important;
-    max-height: calc(100vh - 100px) !important;
-  }
-}
- 
 @layer base {
   :root {
     --background: 0 0% 100%;

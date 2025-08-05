@@ -11,18 +11,6 @@ const Layout = ({ children }) => {
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
-          
-          {/* Eleven Labs Conversational AI Widget */}
-          <elevenlabs-convai 
-            agent-id="agent_5801k1skmryhfdm8arfd3pg09ce8"
-            style={{
-              position: 'fixed',
-              bottom: '20px',
-              right: '20px',
-              zIndex: 1000
-            }}
-            className="elevenlabs-widget"
-          ></elevenlabs-convai>
         </div>
       </ThemeProvider>
     </HelmetProvider>
