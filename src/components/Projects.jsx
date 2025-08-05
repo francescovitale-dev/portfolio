@@ -1,16 +1,14 @@
 import { useState, useRef, useEffect } from "react";
-import Neverappedi from "../assets/images/neverappedi.webp";
 import { motion, useAnimation, useInView, AnimatePresence } from "framer-motion";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, Code, Users, Stethoscope, Brain, Wrench } from "lucide-react";
+import { Github, ExternalLink, Code, Wrench } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import SEO from "./SEO";
 import { AmandoMedImage, SHBImage, AITrainerImage, NeverAppediImage } from "./ProjectImages";
