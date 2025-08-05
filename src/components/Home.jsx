@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Calendar } from "lucide-react";
 import SEO from "./SEO";
+import { ArrowRight } from 'lucide-react';
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -184,15 +185,16 @@ const Home = () => {
               className="flex pt-2 gap-3 items-center justify-center"
               variants={itemVariants}
             >
-              <Button asChild className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground rounded-md group relative overflow-hidden">
-                <a href="https://cal.com/francesco-vitale/30" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                  <Calendar size={16} className="mr-2 relative z-10" /> 
-                  <span className="relative z-10">Schedule a Call</span>
+             <Button asChild size="lg" className="group relative overflow-hidden">
+                <a href="https://cal.com/francesco-vitale/30" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <Calendar size={18} className="mr-2" />
+                  Book a call
+                  <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
                   <motion.div
-                    className="absolute inset-0 bg-white/20"
+                    className="absolute inset-0 bg-white/10"
                     initial={{ x: '-100%' }}
                     whileHover={{ x: '100%' }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.6 }}
                   />
                 </a>
               </Button>

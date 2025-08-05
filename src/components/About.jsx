@@ -24,6 +24,19 @@ const About = () => {
   // Marketing insight: Using storytelling to create an emotional connection
   const timelineData = [
     {
+      type: "freelance",
+      title: "Freelance Full-Stack Developer",
+      organization: "Independent Contractor",
+      subtitle: "Building Modern Web Solutions",
+      period: "2024 - Present",
+      location: "Remote",
+      icon: Briefcase,
+      color: "bg-primary/20 text-primary",
+      borderColor: "border-primary/30",
+      story: "Specializing in creating scalable web applications for healthcare, collaboration, and mobility platforms. Delivering end-to-end solutions from concept to deployment, focusing on clean code architecture and exceptional user experiences that drive business growth.",
+      skills: ["React", "Node.js", "TypeScript", "MongoDB", "Tailwind CSS", "Framer Motion"]
+    },
+    {
       type: "experience",
       title: "Coding Expert for AI Training",
       organization: "Scale AI",
@@ -202,7 +215,7 @@ const About = () => {
             variant="outline" 
             className="mb-4 px-4 py-2 text-xs font-semibold tracking-wider uppercase border-primary/20 bg-primary/5"
           >
-            My Professional Journey
+            About Me
           </Badge>
         </motion.div>
 
