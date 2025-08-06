@@ -12,9 +12,9 @@ const Home = () => {
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: 0.15,
         delayChildren: 0.2
       }
@@ -23,10 +23,10 @@ const Home = () => {
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 100,
         damping: 10
@@ -36,20 +36,20 @@ const Home = () => {
 
   const profileVariants = {
     hidden: { scale: 0, opacity: 0 },
-    visible: { 
-      scale: 1, 
+    visible: {
+      scale: 1,
       opacity: 1,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 100,
         damping: 8,
         delay: 0.2
       }
     },
-    hover: { 
+    hover: {
       scale: 1.05,
       boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 300,
         damping: 15
@@ -59,15 +59,15 @@ const Home = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden">
-      <SEO 
+      <SEO
         title="Home"
         description="Welcome to my portfolio. I'm a Software Developer specializing in modern web development, creating intuitive and responsive user experiences."
         url="https://www.vitalefrancesco.com/#home"
       />
-      
+
       {/* Background effects */}
       <div className="absolute inset-0 bg-grid-white/[0.03] bg-[size:50px_50px]" />
-      
+
       <motion.div
         className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-40"
         animate={{
@@ -80,9 +80,9 @@ const Home = () => {
           repeatType: "reverse",
         }}
       />
-      
+
       <div className="container mx-auto px-4 lg:px-8 max-w-5xl relative z-10 flex justify-center items-center">
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center w-full"
           variants={containerVariants}
           initial="hidden"
@@ -131,13 +131,13 @@ const Home = () => {
           {/* Content */}
           <div className="flex flex-col text-center space-y-3 w-full max-w-2xl">
             <motion.div variants={itemVariants}>
-              <motion.p 
+              <motion.p
                 className="text-lg text-primary font-semibold mb-1"
                 variants={itemVariants}
               >
                 Hey, I'm Francesco
               </motion.p>
-              <motion.h1 
+              <motion.h1
                 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary bg-300% animate-gradient"
                 variants={itemVariants}
               >
@@ -145,15 +145,14 @@ const Home = () => {
               </motion.h1>
             </motion.div>
 
-            <motion.p 
+            <motion.p
               className="text-base text-muted-foreground leading-relaxed mx-auto"
               variants={itemVariants}
             >
-              Building modern web applications with clean, efficient code. Focused on creating 
-              intuitive and responsive user experiences that solve real-world problems.
+              I like turning ideas into products that are lean, focused, and genuinely helpful.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex justify-center space-x-4 pt-1"
               variants={itemVariants}
             >
@@ -185,7 +184,7 @@ const Home = () => {
               className="flex pt-2 gap-3 items-center justify-center"
               variants={itemVariants}
             >
-             <Button asChild size="lg" className="group relative overflow-hidden">
+              <Button asChild size="lg" className="group relative overflow-hidden">
                 <a href="https://cal.com/francesco-vitale/30" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                   <Calendar size={18} className="mr-2" />
                   Book a call
