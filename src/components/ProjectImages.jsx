@@ -111,10 +111,13 @@ export const SHBImage = () => (
       </div>
     </div>
     
-    {/* Simple Status */}
-    <div className="absolute bottom-6 right-6 opacity-25">
+    {/* Simple Status - Responsive */}
+    <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 opacity-25">
       <div className="text-xs text-indigo-600 font-medium">
-        <div className="bg-indigo-200/50 px-2 py-1 rounded text-center">Collaboration</div>
+        <div className="bg-indigo-200/50 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded text-center">
+          <span className="hidden sm:inline">Collaboration</span>
+          <span className="sm:hidden">Collab</span>
+        </div>
       </div>
     </div>
     
