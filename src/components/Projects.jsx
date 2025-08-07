@@ -17,7 +17,7 @@ const projectsData = [
   {
     title: "AmandoMed",
     description:
-      "German modern medical appointment platform that simplifies healthcare access. Built with React and Node.js, featuring real-time booking, secure patient data management, and intuitive user experience for both patients and healthcare providers.",
+      "German modern medical appointment platform that simplifies healthcare access. Features real-time booking, secure patient data management, and intuitive user experience for both patients and healthcare providers.",
     image: null, // Will use custom gradient
     liveLink: "#",
     tech: ["React", "Node.js", "Tailwind CSS", "Medical Platform"],
